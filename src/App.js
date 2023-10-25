@@ -1,25 +1,69 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import MainContainer from './components/main/mainContainer';
+import SecondaryContainer from './components/secondary/secondaryContainer';
+import { useMedia } from '@dsplay/react-template-utils';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  let media = useMedia();
+  let mainLogo = media.mainLogo;
+  let seta = media.seta;
+  let timePage = media.timePage;
+
+  //Paginação
+  const viewHeight = window.innerHeight;
+  let itemsPerPage = 4;
+
+  if (viewHeight <= 720) {
+    itemsPerPage = 3;
+  } else if (viewHeight <= 1080) {
+    itemsPerPage = 5;
+  } else if (viewHeight <= 1280) {
+    itemsPerPage = 7;
+  } else {
+    itemsPerPage = 9;
+  }
+
+let timeoutInterval = timePage;
+let [currentPage, setCurrentPage] = useState(1);
+let [visibleEvents, setVisibleEvents] = useState([]);
+
+useEffect(() => {
+  const events = media.events;
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentEvents = events.slice(startIndex, endIndex);
+
+  setVisibleEvents(currentEvents);
+
+  const timer = setTimeout(() => {
+    if (endIndex < events.length) {
+      setCurrentPage(currentPage + 1);
+    } else {
+      // Reinicia
+      setCurrentPage(1);
+    }
+  }, timeoutInterval);
+
+  return () => clearTimeout(timer);
+}, [media.events, currentPage]);
+
+return (
+  <div className="app-container">
+    <MainContainer mainLogo={mainLogo}></MainContainer>
+    {visibleEvents.map((data, index) => (
+      <SecondaryContainer
+        key={index}
+        logo={data.logo}
+        direction={data.direction}
+        name={data.name}
+        place={data.place}
+        floor={data.floor}
+        seta={seta}
+      ></SecondaryContainer>
+    ))}
+  </div>
+);
 }
 
 export default App;
