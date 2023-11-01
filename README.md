@@ -3,7 +3,7 @@
 
 # DSPLAY - React Template Hotel
 
-##Example 
+## Example 
 ![image](https://github.com/gabiswar/template-hotel/assets/108243030/a2951d11-314f-4048-9701-0d94ba9d8e4c)
 
 ## Available Scripts
