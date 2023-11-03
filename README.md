@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+![image](https://github.com/gabiswar/template-hotel/assets/108243030/79ffa0e3-fa4a-41cf-9f9b-64a821b96be0)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# DSPLAY - React Template Hotel
+
+## Example 
+![image](https://github.com/gabiswar/template-hotel/assets/108243030/a2951d11-314f-4048-9701-0d94ba9d8e4c)
 
 ## Available Scripts
 
