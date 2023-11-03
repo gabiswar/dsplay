@@ -8,12 +8,12 @@ function App() {
   let media = useMedia();
   let mainLogo = media.mainLogo;
   let seta = media.seta;
-  let timePage = media.timePage;
-
+  let maxPageTimeSeconds = media.maxPageTimeSeconds;
+  
   //Paginação
   const viewHeight = window.innerHeight;
   let itemsPerPage = 4;
-
+  
   if (viewHeight <= 720) {
     itemsPerPage = 3;
   } else if (viewHeight <= 1080) {
@@ -23,6 +23,9 @@ function App() {
   } else {
     itemsPerPage = 9;
   }
+  let numberOfPage = media.events.length;
+  let duration = (media.duration - 1000) / numberOfPage;
+  let timePage = duration > maxPageTimeSeconds ? maxPageTimeSeconds : duration ;
 
 let timeoutInterval = timePage;
 let [currentPage, setCurrentPage] = useState(1);

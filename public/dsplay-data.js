@@ -11,13 +11,14 @@ var dsplay_config = {
 var dsplay_media = {
     mainLogo: '../test-assets/mainLogo.png',
     seta: '../test-assets/seta.png',
-    timePage: 10000,
+    maxPageTimeSeconds: 10000000,
+    duration: 100000,
     events: [{
         name: "Gilberto Fdasasreyre",
         place: "Piso C1",
         floor: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.  ",
         direction: "down_left", // up, up-right, right, down-right, down, down-left, left, up-left
-        logo: "../test-assets/tramontina.png"
+        logo: "../test-assets/logo_esquerda.png"
     },
     {
         name: "Restaurante Mdsairange",
