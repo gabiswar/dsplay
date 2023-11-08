@@ -3,11 +3,11 @@ import './App.css';
 import MainContainer from './components/main/mainContainer';
 import SecondaryContainer from './components/secondary/secondaryContainer';
 import { useMedia } from '@dsplay/react-template-utils';
+import Seta from './components/images/seta.png';
 
 function App() {
   let media = useMedia();
   let mainLogo = media.mainLogo;
-  let seta = media.seta;
   let maxPageTimeSeconds = media.maxPageTimeSeconds;
   
   //Paginação
@@ -62,7 +62,7 @@ return (
         name={data.name}
         place={data.place}
         floor={data.floor}
-        seta={seta}
+        seta={Seta}
       ></SecondaryContainer>
     ))}
   </div>

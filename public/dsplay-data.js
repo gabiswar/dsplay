@@ -10,7 +10,6 @@ var dsplay_config = {
 
 var dsplay_media = {
     mainLogo: '../test-assets/mainLogo.png',
-    seta: '../test-assets/seta.png',
     maxPageTimeSeconds: 10000000,
     duration: 100000,
     events: [{
