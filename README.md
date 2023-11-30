@@ -6,6 +6,24 @@
 ## Example 
 ![image](https://github.com/gabiswar/template-hotel/assets/108243030/a2951d11-314f-4048-9701-0d94ba9d8e4c)
 
+
+
+Configuration
+This template has some configuration variables as the following table shows:
+
+| Variable               | Type   | Description                                                                                           |
+|------------------------|--------|-------------------------------------------------------------------------------------------------------|
+| mainLogo               | String | Path to the main logo image file.                                                                    |
+| maxPageTimeSeconds     | Number | Maximum time limit (in seconds) for each page.                                                       |
+| duration               | Number | Total duration of the presentation in milliseconds.                                                 |
+| events                 | Array  | List of events, each represented by an object containing the following properties:                 |
+| events.name            | String | Name of the event.                                                                                   |
+| events.place           | String | Location of the event.                                                                              |
+| events.floor           | String | Description of the floor or specific location of the event.                                         |
+| events.direction       | String | Direction of the event, can be: "up", "up-right", "right", "down-right", "down", "down-left", "left", "up-left". |
+| events.logo            | String | Path to the logo image file associated with the event.                                              |
+
+
 ## Available Scripts
 
 In the project directory, you can run:
