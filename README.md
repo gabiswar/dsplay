@@ -8,7 +8,7 @@
 
 
 
-Configuration
+## Configuration
 This template has some configuration variables as the following table shows:
 
 | Variable               | Type   | Description                                                                                           |
