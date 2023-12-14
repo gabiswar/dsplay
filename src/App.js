@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import MainContainer from './components/main/mainContainer';
-import SecondaryContainer from './components/secondary/secondaryContainer';
+import HeaderContainer from './components/header/HeaderContainer';
+import TableContainer from './components/table/TableContainer';
 import { useMedia, Loader, useScreenInfo } from '@dsplay/react-template-utils';
-import Seta from './components/images/seta.png';
 import Intro from './components/intro';
 
 const MIN_LOADING_DURATION = 2800;
@@ -15,51 +14,15 @@ const fonts = [
 ];
 function App() {
   let media = useMedia();
-  let mainLogo = media.mainLogo;
-  let maxPageTimeSeconds = media.maxPageTimeSeconds;
   const { screenFormat } = useScreenInfo();
+  // const moedas = [
+  //   { currency: 'USD', weBuy: 1.2, weSell: 1.1 },
+  //   { currency: 'EUR', weBuy: 1.5, weSell: 1.4 },
+  //   // Adicione mais dados conforme necessário
+  // ];
 
-  //Paginação
-  const viewHeight = window.innerHeight;
-  let itemsPerPage = 4;
-
-  if (viewHeight <= 720) {
-    itemsPerPage = 3;
-  } else if (viewHeight <= 1080) {
-    itemsPerPage = 5;
-  } else if (viewHeight <= 1280) {
-    itemsPerPage = 6;
-  } else {
-    itemsPerPage = 9;
-  }
-  let numberOfPage = media.events.length;
-  let duration = (media.duration - 1000) / numberOfPage;
-  let timePage = duration > maxPageTimeSeconds ? maxPageTimeSeconds : duration;
-
-  let timeoutInterval = timePage;
-  let [currentPage, setCurrentPage] = useState(1);
-  let [visibleEvents, setVisibleEvents] = useState([]);
-
-  useEffect(() => {
-    const events = media.events;
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const currentEvents = events.slice(startIndex, endIndex);
-
-    setVisibleEvents(currentEvents);
-
-    const timer = setTimeout(() => {
-      if (endIndex < events.length) {
-        setCurrentPage(currentPage + 1);
-      } else {
-        // Reinicia
-        setCurrentPage(1);
-      }
-    }, timeoutInterval);
-
-    return () => clearTimeout(timer);
-  }, [media.events, currentPage]);
-
+  const moedas = media.moedas;
+  
   return (
     <Loader
       placeholder={<Intro />}
@@ -67,21 +30,19 @@ function App() {
       minDuration={MIN_LOADING_DURATION}
     >
       <div className={`app-container fade-in ${screenFormat}`}>
-        <MainContainer mainLogo={mainLogo}></MainContainer>
-        {visibleEvents.map((data, index) => (
-          <SecondaryContainer
-            key={index}
-            logo={data.logo}
-            direction={data.direction}
-            name={data.name}
-            place={data.place}
-            floor={data.floor}
-            seta={Seta}
-          ></SecondaryContainer>
+        <HeaderContainer></HeaderContainer>
+        {moedas.map((data, index) => (
+          <TableContainer 
+            key={index} 
+            flag={data.flag}
+            currency={data.currency}
+            weSell={data.weSell}
+            weBuy={data.weBuy}
+          ></TableContainer>
         ))}
       </div>
-    </Loader>
 
+    </Loader>
   );
 }
 

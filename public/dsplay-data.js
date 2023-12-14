@@ -9,59 +9,30 @@ var dsplay_config = {
 };
 
 var dsplay_media = {
-    mainLogo: '../test-assets/mainLogo.png',
-    maxPageTimeSeconds: 10000000,
-    duration: 100000,
-    events: [{
-        name: "Gilberto Fdasasreyre",
-        place: "Piso C1",
-        floor: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.  ",
-        direction: "down_left", // up, up-right, right, down-right, down, down-left, left, up-left
-        logo: "../test-assets/logo_esquerda.png"
-    },
-    {
-        name: "Restaurante Mdsairange",
-        place: "Piso C2",
-        floor: "Tramontina",
-        direction: "left", // up, up-right, right, down-right, down, down-left, left, up-left
-        logo: "../test-assets/tramontina.png"
-    }, {
-        name: "Gilberto Freydasdasre",
-        place: "Piso J2",
-        floor: "Cc",
-        direction: "down_left", // up, up-right, right, down-right, down, down-left, left, up-left
-        logo: "../test-assets/tramontina.png"
-    }, {
-        name: "Gilberto Freydasdasre",
-        place: "Piso J2",
-        floor: "Cc",
-        direction: "down_left", // up, up-right, right, down-right, down, down-left, left, up-left
-        logo: "../test-assets/tramontina.png"
-    }, {
-        name: "Gilberto Freydasdasre",
-        place: "Piso J2",
-        floor: "Cc",
-        direction: "down_left", // up, up-right, right, down-right, down, down-left, left, up-left
-        logo: "../test-assets/tramontina.png"
-    }, {
-        name: "Gilberto Freydasdasre",
-        place: "Piso J2",
-        floor: "Cc",
-        direction: "down_left", // up, up-right, right, down-right, down, down-left, left, up-left
-        logo: "../test-assets/tramontina.png"
-    }, {
-        name: "Gilberto Freydasdasre",
-        place: "Piso J2",
-        floor: "Cc",
-        direction: "down_left", // up, up-right, right, down-right, down, down-left, left, up-left
-        logo: "../test-assets/tramontina.png"
-    }, {
-        name: "Gilberto Freydasdasre",
-        place: "Piso J2",
-        floor: "Cc",
-        direction: "down_left", // up, up-right, right, down-right, down, down-left, left, up-left
-        logo: "../test-assets/tramontina.png"
+    moedas: [{
+        flag: "../test-assets/FlagBrazil.png",
+        currency: "BRL",
+        weSell: "1.1",
+        weBuy: "1.2", 
+    },{
+        flag: "../test-assets/FlagCanada.png",
+        currency: "CAD",
+        weSell: "11.5",
+        weBuy: "12.2", 
+    },{
+        flag: "../test-assets/FlagJapan.png",
+        currency: "JPY",
+        weSell: "22.1",
+        weBuy: "20.4", 
+    },{
+        flag: "../test-assets/FlagNewZealand.png",
+        currency: "NZD",
+        weSell: "30.1",
+        weBuy: "32.4", 
     }]
+
+    /*     { currency: 'USD', weBuy: 1.2, weSell: 1.1 },
+    { currency: 'EUR', weBuy: 1.5, weSell: 1.4 },*/
 };
 
 var dsplay_template = {
