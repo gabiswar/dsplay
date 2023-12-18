@@ -39,9 +39,5 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
-  },
-  "description": "![image](https://github.com/gabiswar/template-hotel/assets/108243030/79ffa0e3-fa4a-41cf-9f9b-64a821b96be0)",
-  "main": "index.js",
-  "author": "",
-  "license": "ISC"
+  }
 }
